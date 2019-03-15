@@ -1,11 +1,14 @@
 # `eslint-config-nb`
 
-> TODO: description
+```
+yarn add babel-eslint eslint eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
+```
 
 ## Usage
 
-```
-const eslintConfigNb = require('eslint-config-nb');
+.eslintrc
 
-// TODO: DEMONSTRATE API
+```
+extends:
+  - nb
 ```
