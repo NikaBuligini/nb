@@ -1,16 +1,16 @@
 {
   "name": "babel-preset-nb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "Nikoloz Buligini",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-env": "^7.4.1",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-plugin-styled-components": "^1.10.0"
