@@ -1,0 +1,49 @@
+{
+  "name": "react-nb-hooks",
+  "version": "1.0.1",
+  "description": "Simple react hooks",
+  "main": "index.js",
+  "module": "es/index.js",
+  "repository": "https://github.com/NikaBuligini/nb",
+  "author": "Nikoloz Buligini",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "index.js",
+    "common.js",
+    "useDocumentVisibility.js",
+    "useEvents.js",
+    "useInteractionHandlers.js",
+    "useKeyPress.js",
+    "useLockBodyScroll.js",
+    "useScrollTop.js",
+    "useTicks.js",
+    "useWindowSize.js",
+    "es"
+  ],
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "lint": "node ./scripts/eslint",
+    "prettier": "prettier --write \"{scripts,src}/**/*.{js,md}\"",
+    "prettier:diff": "prettier --list-different \"{scripts,src}/**/*.{js,md}\""
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.6",
+    "react-dom": ">= 16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-nb": "^1.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-nb": "^1.0.3",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6"
+  }
+}
