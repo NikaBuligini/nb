@@ -32,8 +32,8 @@
     "react-dom": ">= 16.8.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
     "babel-eslint": "^10.0.1",
     "babel-preset-nb": "^1.0.6",
     "eslint": "^5.16.0",

@@ -4,8 +4,8 @@ import { useEventListener } from './useEvents';
 
 function getDimension() {
   return {
-    width: window.outerWidth,
-    height: window.outerHeight,
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 }
 
@@ -47,11 +47,11 @@ export const TYPES = {
 };
 
 function detectBrowserType({ width }) {
-  if (width <= 575) {
+  if (width < 576) {
     return TYPES.mobile;
   }
 
-  if (width <= 992) {
+  if (width < 992) {
     return TYPES.tablet;
   }
 
