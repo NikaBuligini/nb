@@ -24,10 +24,13 @@ export function useInteractionHandlers() {
 export function useHover() {
   const [isHovered, setHovered] = React.useState(false);
 
-  const bind = {
-    onMouseEnter: () => setHovered(true),
-    onMouseLeave: () => setHovered(false),
-  };
+  const bind = React.useMemo(
+    () => ({
+      onMouseEnter: () => setHovered(true),
+      onMouseLeave: () => setHovered(false),
+    }),
+    [setHovered],
+  );
 
   return [isHovered, bind];
 }
@@ -35,10 +38,13 @@ export function useHover() {
 export function useFocus() {
   const [isFocused, setFocus] = React.useState(false);
 
-  const bind = {
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
-  };
+  const bind = React.useMemo(
+    () => ({
+      onFocus: () => setFocus(true),
+      onBlur: () => setFocus(false),
+    }),
+    [setFocus],
+  );
 
   return [isFocused, bind];
 }

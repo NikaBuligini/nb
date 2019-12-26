@@ -1,7 +1,11 @@
 import React from 'react';
 
-export function useKeyPress(targetKey, onKey, deps = []) {
-  const memorizedOnKey = React.useCallback(onKey, deps);
+export function useKeyPress(targetKey, callback) {
+  const callbackRef = React.useRef(callback);
+
+  React.useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
 
   React.useEffect(() => {
     const keys = targetKey.split('+').map(k => k.trim().toLowerCase());
@@ -27,7 +31,7 @@ export function useKeyPress(targetKey, onKey, deps = []) {
       });
 
       if (match) {
-        memorizedOnKey();
+        callbackRef.current();
       }
     }
 
@@ -36,7 +40,7 @@ export function useKeyPress(targetKey, onKey, deps = []) {
     return () => {
       window.removeEventListener('keydown', downHandler);
     };
-  }, [targetKey, memorizedOnKey]);
+  }, [targetKey]);
 }
 
 function isTyping() {
@@ -49,10 +53,12 @@ function isTyping() {
 }
 
 export function useSafeKeyPress(targetKey, onKey) {
-  useKeyPress(targetKey, () => {
+  const callback = React.useCallback(() => {
     // no action if active element is input
     if (!isTyping()) {
       onKey();
     }
-  });
+  }, [onKey]);
+
+  useKeyPress(targetKey, callback);
 }

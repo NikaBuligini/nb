@@ -65,7 +65,12 @@ export function useSimpleForm(initialState, init) {
 
   const handleInputChange = React.useCallback(
     event => {
-      const { name, value } = event.target;
+      const value =
+        event.target.type === 'checkbox'
+          ? event.target.checked
+          : event.target.value;
+      const { name } = event.target;
+
       setState({ [name]: value });
     },
     [setState],
